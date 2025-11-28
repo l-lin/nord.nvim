@@ -179,6 +179,10 @@ function treesitter.highlights()
     ["@lsp.typemod.string.injected"] = { link = "@string" },
     ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"] = { link = "@variable" },
+
+    -- Treesitter Context
+    TreesitterContext = { bg = s.bg1 },
+    TreesitterContextLineNumber = { fg = s.fg, bg = s.bg1 },
   }
 end
 
