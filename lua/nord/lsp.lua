@@ -4,39 +4,41 @@ local lsp = {}
 local c = require("nord.colors").palette
 
 function lsp.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
     -- LspReferenceText = { bg = c.fg_gutter }, -- used for highlighting "text" references
     -- LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
     -- LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
 
-    DiagnosticOk = { fg = c.aurora.green }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticError = { fg = c.aurora.red }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticWarn = { fg = c.aurora.yellow }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticInfo = { fg = c.frost.ice }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticHint = { fg = c.frost.artic_water }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticOk = { fg = s.success }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticError = { fg = s.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticWarn = { fg = s.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticInfo = { fg = s.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticHint = { fg = s.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-    DiagnosticVirtualTextError = { bg = utils.darken(c.aurora.red, 0.1), fg = c.aurora.red }, -- Used for "Error" diagnostic virtual text
-    DiagnosticVirtualTextWarn = { bg = utils.darken(c.aurora.yellow, 0.1), fg = c.aurora.yellow }, -- Used for "Warning" diagnostic virtual text
-    DiagnosticVirtualTextInfo = { bg = utils.darken(c.frost.ice, 0.1), fg = c.frost.ice }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextHint = { bg = utils.darken(c.frost.artic_water, 0.1), fg = c.frost.artic_water }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextError = { bg = utils.darken(s.error, 0.1), fg = s.error }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn = { bg = utils.darken(s.warning, 0.1), fg = s.warning }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { bg = utils.darken(s.info, 0.1), fg = s.info }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { bg = utils.darken(s.hint, 0.1), fg = s.hint }, -- Used for "Hint" diagnostic virtual text
 
-    DiagnosticUnderlineError = { undercurl = true, sp = c.aurora.red }, -- Used to underline "Error" diagnostics
-    DiagnosticUnderlineWarn = { undercurl = true, sp = c.aurora.yellow }, -- Used to underline "Warning" diagnostics
-    DiagnosticUnderlineInfo = { undercurl = true, sp = c.frost.ice }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { undercurl = true, sp = c.frost.artic_water }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineError = { undercurl = true, sp = s.error }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn = { undercurl = true, sp = s.warning }, -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInfo = { undercurl = true, sp = s.info }, -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = { undercurl = true, sp = s.hint }, -- Used to underline "Hint" diagnostics
 
-    LspCodeLens = { fg = c.polar_night.brightest },
-    LspInlayHint = { fg = c.polar_night.brightest },
+    LspCodeLens = { fg = s.bg3 },
+    LspInlayHint = { fg = s.bg3 },
 
     -- ray-x/lsp_signature.nvim
-    LspSignatureActiveParameter = { bg = c.polar_night.brighter, bold = true },
+    LspSignatureActiveParameter = { bg = s.bg2, bold = true },
 
     -- LspTrouble
-    TroubleText = { fg = c.snow_storm.origin },
-    TroubleCount = { fg = c.frost.ice, bg = c.polar_night.brightest },
-    TroubleNormal = { fg = c.snow_storm.origin, bg = c.none },
-    TroubleIndent = { fg = c.polar_night.light, bg = c.none },
-    TroubleLocation = { fg = c.polar_night.light, bg = c.none },
+    TroubleText = { fg = s.fg },
+    TroubleCount = { fg = s.func, bg = s.bg3 },
+    TroubleNormal = { fg = s.fg, bg = c.none },
+    TroubleIndent = { fg = s.comment, bg = c.none },
+    TroubleLocation = { fg = s.comment, bg = c.none },
   }
 end
 

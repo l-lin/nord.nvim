@@ -3,10 +3,12 @@ local c = require("nord.colors").palette
 local utils = require("nord.utils")
 
 function render_markdown.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
-    RenderMarkdownBullet = { fg = c.frost.artic_water },
-    RenderMarkdownQuote = { fg = c.polar_night.light },
-    RenderMarkdownTodo = { fg = c.snow_storm.origin },
+    RenderMarkdownBullet = { fg = s.func },
+    RenderMarkdownQuote = { fg = s.bg2 },
+    RenderMarkdownTodo = { fg = s.fg },
     RenderMarkdownH1Bg = { bg = utils.darken(c.frost.artic_water, 0.2) },
     RenderMarkdownH2Bg = { bg = utils.darken(c.aurora.purple, 0.2) },
     RenderMarkdownH3Bg = { bg = utils.darken(c.aurora.green, 0.2) },

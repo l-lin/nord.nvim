@@ -3,15 +3,17 @@ local ui = {}
 local c = require("nord.colors").palette
 
 function ui.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
     -- folke/which-key.nvim
-    WhichKey = { fg = c.frost.ice, bold = true },
-    WhichKeyGroup = { fg = c.frost.artic_water },
-    WhichKeyDesc = { fg = c.snow_storm.origin },
-    WhichKeyFloat = { bg = c.polar_night.bright },
+    WhichKey = { fg = s.type, bold = true },
+    WhichKeyGroup = { fg = s.func },
+    WhichKeyDesc = { fg = s.fg },
+    WhichKeyFloat = { bg = s.bg1 },
     WhichKeyIconOrange = { fg = c.aurora.orange },
     WhichKeyIconPurple = { fg = c.aurora.purple },
-    WhichKeyIconGrey = { fg = c.polar_night.brightest },
+    WhichKeyIconGrey = { fg = s.comment },
 
     -- SmiteshP/nvim-navic
     NavicIconsFile = { link = "@include" },
@@ -42,11 +44,11 @@ function ui.highlights()
     NavicIconsOperator = { link = "@lsp.type.operator" },
     NavicIconsTypeParameter = { link = "@lsp.type.typeParameter" },
     NavicText = { link = "@text" },
-    NavicSeparator = { fg = c.frost.artic_water, bg = c.polar_night.brighter },
+    NavicSeparator = { fg = s.func, bg = s.bg1 },
 
     -- stevearc/aerial.nvim
-    AerialLine = { bg = c.polar_night.bright },
-    AerialLineNC = { bg = c.polar_night.bright },
+    AerialLine = { bg = s.bg1 },
+    AerialLineNC = { bg = s.bg1 },
 
     AerialArrayIcon = { link = "AerialArray" },
     AerialBooleanIcon = { link = "AerialBoolean" },
@@ -109,7 +111,7 @@ function ui.highlights()
     rainbowcol4 = { fg = c.aurora.yellow },
     rainbowcol5 = { fg = c.frost.polar_water },
     rainbowcol6 = { fg = c.aurora.purple },
-    rainbowcol7 = { fg = c.snow_storm.origin },
+    rainbowcol7 = { fg = s.fg },
 
     --"HiPhish/rainbow-delimiters.nvim",
     RainbowDelimiterRed = { fg = c.aurora.red },
@@ -124,9 +126,9 @@ function ui.highlights()
     HighlightUndo = { link = "Search" },
     HighlightRedo = { link = "Search" },
 
-    IlluminatedWordText = { fg = c.none, bg = c.polar_night.brightest },
-    IlluminatedWordRead = { fg = c.none, bg = c.polar_night.brightest },
-    IlluminatedWordWrite = { fg = c.none, bg = c.polar_night.brightest },
+    IlluminatedWordText = { fg = c.none, bg = s.bg2 },
+    IlluminatedWordRead = { fg = c.none, bg = s.bg2 },
+    IlluminatedWordWrite = { fg = c.none, bg = s.bg2 },
 
     SnacksDashboardDir = { link = "Comment" },
   }

@@ -1,23 +1,24 @@
 local neogit = {}
 
-local utils = require("nord.utils")
 local c = require("nord.colors").palette
 
 function neogit.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
-    NeogitDiffAdd = { fg = c.aurora.green, bg = c.polar_night.bright },
-    NeogitDiffAddHighlight = { fg = c.aurora.green, bg = c.polar_night.bright },
-    NeogitDiffChange = { fg = c.aurora.yellow, bg = c.polar_night.bright },
-    NeogitDiffDelete = { fg = c.aurora.red, bg = c.polar_night.bright },
-    NeogitDiffDeleteHighlight = { fg = c.aurora.red, bg = c.polar_night.bright },
-    NeogitDiffText = { fg = c.frost.artic_water, bg = c.polar_night.bright },
-    NeogitContextHighlight = { fg = c.frost.artic_water, bg = c.polar_night.bright },
-    NeogitDiffContextHighlight = { fg = c.frost.artic_water, bg = c.polar_night.bright },
-    NeogitHunkHeader = { fg = c.snow_storm.origin, bg = c.polar_night.brightest },
-    NeogitDiffAddCursor = { fg = c.aurora.green, bg = c.polar_night.origin },
-    NeogitDiffDeleteCursor = { fg = c.aurora.red, bg = c.polar_night.origin },
-    NeogitDiffContext = { fg = c.frost.artic_water, bg = c.polar_night.origin },
-    NeogitDiffContextCursor = { fg = c.frost.artic_water, bg = c.polar_night.origin },
+    NeogitDiffAdd = { fg = s.success, bg = s.bg1 },
+    NeogitDiffAddHighlight = { fg = s.success, bg = s.bg1 },
+    NeogitDiffChange = { fg = s.warning, bg = s.bg1 },
+    NeogitDiffDelete = { fg = s.error, bg = s.bg1 },
+    NeogitDiffDeleteHighlight = { fg = s.error, bg = s.bg1 },
+    NeogitDiffText = { fg = s.keyword, bg = s.bg1 },
+    NeogitContextHighlight = { fg = s.keyword, bg = s.bg1 },
+    NeogitDiffContextHighlight = { fg = s.keyword, bg = s.bg1 },
+    NeogitHunkHeader = { fg = s.fg, bg = s.bg3 },
+    NeogitDiffAddCursor = { fg = s.success, bg = s.bg },
+    NeogitDiffDeleteCursor = { fg = s.error, bg = s.bg },
+    NeogitDiffContext = { fg = s.keyword, bg = s.bg },
+    NeogitDiffContextCursor = { fg = s.keyword, bg = s.bg },
   }
 end
 

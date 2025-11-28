@@ -1,7 +1,5 @@
 local snacks = {}
 
-local c = require("nord.colors").palette
-
 function snacks.highlights()
   return {
     SnacksDashboardDir = { link = "Comment" },

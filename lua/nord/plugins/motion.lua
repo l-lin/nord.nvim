@@ -3,17 +3,19 @@ local motion = {}
 local c = require("nord.colors").palette
 
 function motion.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
-    LeapMatch = { fg = c.polar_night.bright, bg = c.frost.polar_water, bold = true, nocombine = true },
-    LeapLabelPrimary = { fg = c.polar_night.bright, bg = c.aurora.green, bold = true, nocombine = true },
-    LeapLabelSecondary = { fg = c.polar_night.bright, bg = c.aurora.purple, bold = true, nocombine = true },
-    LeapLabelSelected = { fg = c.polar_night.bright, bg = c.aurora.yellow, bold = true, nocombine = true },
-    LeapLabel = { bg = c.aurora.yellow, fg = c.polar_night.origin, bold = true },
+    LeapMatch = { fg = s.bg, bg = s.type, bold = true, nocombine = true },
+    LeapLabelPrimary = { fg = s.bg, bg = s.success, bold = true, nocombine = true },
+    LeapLabelSecondary = { fg = s.bg, bg = c.aurora.purple, bold = true, nocombine = true },
+    LeapLabelSelected = { fg = s.bg, bg = s.warning, bold = true, nocombine = true },
+    LeapLabel = { bg = s.warning, fg = s.bg, bold = true },
     LeapBackdrop = { link = "Comment" },
 
-    FlashMatch = { bg = c.polar_night.bright, fg = c.snow_storm.origin },
-    FlashCurrent = { bg = c.polar_night.brighter, fg = c.snow_storm.origin, underline = true },
-    FlashLabel = { bg = c.aurora.yellow, fg = c.polar_night.origin, bold = true },
+    FlashMatch = { bg = s.bg1, fg = s.fg },
+    FlashCurrent = { bg = s.bg2, fg = s.fg, underline = true },
+    FlashLabel = { bg = s.warning, fg = s.bg, bold = true },
   }
 end
 

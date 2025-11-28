@@ -3,28 +3,30 @@ local cmp = {}
 local c = require("nord.colors").palette
 
 function cmp.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
-    CmpItemAbbrDeprecated = { fg = c.polar_night.light },
-    CmpItemAbbrMatch = { fg = c.frost.ice, bold = true },
-    CmpItemAbbrMatchFuzzy = { fg = c.frost.ice, bold = true },
-    CmpItemKind = { fg = c.frost.artic_water },
-    CmpItemKindVariable = { fg = c.frost.ice },
-    CmpItemKindInterface = { fg = c.frost.ice },
-    CmpItemKindClass = { fg = c.frost.ice },
+    CmpItemAbbrDeprecated = { fg = s.comment },
+    CmpItemAbbrMatch = { fg = s.func, bold = true },
+    CmpItemAbbrMatchFuzzy = { fg = s.func, bold = true },
+    CmpItemKind = { fg = s.keyword },
+    CmpItemKindVariable = { fg = s.func },
+    CmpItemKindInterface = { fg = s.func },
+    CmpItemKindClass = { fg = s.func },
     CmpItemKindFunction = { fg = c.aurora.purple },
     CmpItemKindMethod = { fg = c.aurora.purple },
-    CmpItemKindSnippet = { fg = c.aurora.green },
-    CmpItemKindText = { fg = c.snow_storm.origin },
+    CmpItemKindSnippet = { fg = s.success },
+    CmpItemKindText = { fg = s.fg },
 
-    CodeiumSuggestion = { fg = c.polar_night.light },
+    CodeiumSuggestion = { fg = s.comment },
 
-    BlinkCmpMenuBorder = { fg = c.polar_night.bright },
-    BlinkCmpMenuSelection = { fg = c.none, bg = c.polar_night.brighter },
-    BlinkCmpLabelDeprecated = { fg = c.polar_night.light },
-    BlinkCmpLabelMatch = { fg = c.polar_night.ice, bold = true },
-    BlinkCmpGhostText = { fg = c.polar_night.light },
-    BlinkCmpDocBorder = { fg = c.polar_night.bright },
-    BlinkCmpSignatureHelpBorder = { fg = c.polar_night.bright },
+    BlinkCmpMenuBorder = { fg = s.border },
+    BlinkCmpMenuSelection = { fg = c.none, bg = s.bg2 },
+    BlinkCmpLabelDeprecated = { fg = s.comment },
+    BlinkCmpLabelMatch = { fg = s.func, bold = true },
+    BlinkCmpGhostText = { fg = s.comment },
+    BlinkCmpDocBorder = { fg = s.border },
+    BlinkCmpSignatureHelpBorder = { fg = s.border },
     BlinkCmpKindArray = { link = "@lsp.type.array" },
     BlinkCmpKindBoolean = { link = "@lsp.type.boolean" },
     BlinkCmpKindClass = { link = "@lsp.type.class" },
@@ -51,7 +53,7 @@ function cmp.highlights()
     BlinkCmpKindPackage = { link = "@lsp.type.package" },
     BlinkCmpKindProperty = { link = "@lsp.type.property" },
     BlinkCmpKindReference = { link = "@lsp.type.reference" },
-    BlinkCmpKindSnippet = { fg = c.aurora.green },
+    BlinkCmpKindSnippet = { fg = s.success },
     BlinkCmpKindString = { link = "@lsp.type.string" },
     BlinkCmpKindStruct = { link = "@lsp.type.struct" },
     BlinkCmpKindText = { link = "@lsp.type.text" },
@@ -60,9 +62,9 @@ function cmp.highlights()
     BlinkCmpKindValue = { link = "@lsp.type.value" },
     BlinkCmpKindVariable = { link = "@lsp.type.variable" },
 
-    BlinkCmpKindCodeium = { fg = c.aurora.green },
-    BlinkCmpKindCopilot = { fg = c.aurora.green },
-    BlinkCmpKind = { fg = c.frost.artic_water },
+    BlinkCmpKindCodeium = { fg = s.success },
+    BlinkCmpKindCopilot = { fg = s.success },
+    BlinkCmpKind = { fg = s.keyword },
   }
 end
 

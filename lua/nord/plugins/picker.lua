@@ -4,25 +4,27 @@ local c = require("nord.colors").palette
 local utils = require("nord.utils")
 
 function picker.highlights()
-  return {
-    TelescopeBorder = { fg = c.polar_night.light, bg = utils.make_global_bg(true) },
-    TelescopeTitle = { fg = c.snow_storm.origin, bold = true },
-    TelescopePromptCounter = { fg = c.polar_night.light },
-    TelescopeMatching = { fg = c.frost.ice, bold = true },
+  local s = require("nord.colors").get_semantic()
 
-    FzfLuaBorder = { fg = c.polar_night.light, bg = utils.make_global_bg(true) },
-    FzfLuaTitle = { fg = c.snow_storm.origin, bold = true },
-    FzfLuaHeaderBind = { fg = c.frost.ice },
-    FzfLuaHeaderText = { fg = c.frost.artic_ocean },
-    FzfLuaPathColNr = { fg = c.frost.ice },
-    FzfLuaPathLineNr = { fg = c.aurora.green },
-    FzfLuaBufNr = { fg = c.aurora.yellow },
-    FzfLuaBufFlagCur = { fg = c.aurora.red },
-    FzfLuaBufFlagAlt = { fg = c.frost.ice },
-    FzfLuaTabTitle = { fg = c.frost.artic_water },
-    FzfLuaTabMarker = { fg = c.aurora.yellow },
-    FzfLuaLiveSym = { fg = c.aurora.red },
-    FzfLuaLivePrompt = { fg = c.aurora.yellow },
+  return {
+    TelescopeBorder = { fg = s.bg2, bg = utils.make_global_bg(true) },
+    TelescopeTitle = { fg = s.fg, bold = true },
+    TelescopePromptCounter = { fg = s.bg2 },
+    TelescopeMatching = { fg = s.type, bold = true },
+
+    FzfLuaBorder = { fg = s.bg2, bg = utils.make_global_bg(true) },
+    FzfLuaTitle = { fg = s.fg, bold = true },
+    FzfLuaHeaderBind = { fg = s.type },
+    FzfLuaHeaderText = { fg = s.keyword },
+    FzfLuaPathColNr = { fg = s.type },
+    FzfLuaPathLineNr = { fg = s.success },
+    FzfLuaBufNr = { fg = s.warning },
+    FzfLuaBufFlagCur = { fg = s.error },
+    FzfLuaBufFlagAlt = { fg = s.type },
+    FzfLuaTabTitle = { fg = s.func },
+    FzfLuaTabMarker = { fg = s.warning },
+    FzfLuaLiveSym = { fg = s.error },
+    FzfLuaLivePrompt = { fg = s.warning },
   }
 end
 

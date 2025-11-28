@@ -16,6 +16,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - supports TreeSitter and LSP
 - vim terminal colors
 - **lualine** theme
+- light and dark variants (respects `vim.o.background`)
 
 ### Plugin Support
 
@@ -91,6 +92,21 @@ colorscheme nord
 ```lua
 -- Lua
 vim.cmd.colorscheme("nord")
+```
+
+### Light Theme
+
+Nord.nvim automatically respects `vim.o.background`. To use the light variant:
+
+```lua
+vim.o.background = "light"
+vim.cmd.colorscheme("nord")
+```
+
+Or toggle between dark and light:
+
+```lua
+vim.o.background = vim.o.background == "dark" and "light" or "dark"
 ```
 
 ## ⚙️ Configuration

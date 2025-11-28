@@ -3,30 +3,32 @@ local M = {}
 local c = require("nord.colors").palette
 
 function M.highlights()
+  local s = require("nord.colors").get_semantic()
+
   return {
-    GlancePreviewNormal = { bg = c.polar_night.origin },
-    GlancePreviewBorderBottom = { fg = c.polar_night.bright, bg = c.polar_night.origin },
+    GlancePreviewNormal = { bg = s.bg },
+    GlancePreviewBorderBottom = { fg = s.border, bg = s.bg },
     GlanceBorderTop = { link = "GlancePreviewBorderBottom" },
-    GlancePreviewMatch = { bg = c.polar_night.brightest },
-    GlancePreviewEndOfBuffer = { bg = c.polar_night.origin },
+    GlancePreviewMatch = { bg = s.bg3 },
+    GlancePreviewEndOfBuffer = { bg = s.bg },
     GlancePreviewCursorLine = { link = "CursorLine" },
     GlancePreviewSignColumn = { link = "SignColumn" },
     GlancePreviewLineNr = { link = "LineNr" },
 
-    GlanceWinBarFilename = { fg = c.frost.polar_water, bg = c.polar_night.brighter },
-    GlanceWinBarFilepath = { fg = c.snow_storm.origin, bg = c.polar_night.brighter },
-    GlanceWinBarTitle = { fg = c.snow_storm.origin, bg = c.polar_night.brighter },
+    GlanceWinBarFilename = { fg = s.type, bg = s.bg2 },
+    GlanceWinBarFilepath = { fg = s.fg, bg = s.bg2 },
+    GlanceWinBarTitle = { fg = s.fg, bg = s.bg2 },
 
-    GlanceListNormal = { bg = c.polar_night.bright },
-    GlanceListFilename = { fg = c.frost.polar_water },
+    GlanceListNormal = { bg = s.bg1 },
+    GlanceListFilename = { fg = s.type },
     GlanceListBorderBottom = { link = "GlancePreviewBorderBottom" },
-    GlanceListMatch = { bg = c.polar_night.brightest },
-    GlanceListCursorLine = { bg = c.polar_night.brighter },
-    GlanceListFilepath = { fg = c.polar_night.light },
+    GlanceListMatch = { bg = s.bg3 },
+    GlanceListCursorLine = { bg = s.bg2 },
+    GlanceListFilepath = { fg = s.comment },
     GlanceListCount = { fg = c.aurora.purple },
-    GlanceFoldIcon = { fg = c.snow_storm.origin },
-    GlanceListEndOfBuffer = { bg = c.polar_night.bright },
-    GlanceIndent = { fg = c.polar_night.brightest },
+    GlanceFoldIcon = { fg = s.fg },
+    GlanceListEndOfBuffer = { bg = s.bg1 },
+    GlanceIndent = { fg = s.bg3 },
   }
 end
 

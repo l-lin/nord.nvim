@@ -12,8 +12,10 @@ end
 
 function utils.make_diff(color)
   local options = require("nord.config").options
+  local colors = require("nord.colors")
+  local s = colors.get_semantic()
 
-  return { fg = color, bg = c.polar_night.bright, reverse = options.diff.mode ~= "fg" }
+  return { fg = color, bg = s.bg1, reverse = options.diff.mode ~= "fg" }
 end
 
 function utils.make_error(color)
@@ -25,17 +27,6 @@ function utils.make_error(color)
   else
     return vim.tbl_extend("force", { undercurl = true, sp = color }, options.styles.errors)
   end
-end
-
-function utils.darken(hex, amount, bg)
-  local darken = utils.blend(hex, bg or c.polar_night.origin, amount)
-
-  local options = require("nord.config").options
-  if not options.colorblind.enabled then
-    return darken
-  end
-
-  return require("nord.utils.colorblind").daltonize(darken, options.colorblind.severity)
 end
 
 local function hexToRgb(color)
@@ -56,18 +47,46 @@ function utils.blend(foreground, background, alpha)
   return string.format("#%02x%02x%02x", blendChannel(1), blendChannel(2), blendChannel(3))
 end
 
+function utils.darken(hex, amount, bg)
+  local colors = require("nord.colors")
+
+  local target
+  if colors.is_light() then
+    target = bg or colors.get_semantic().bg
+  else
+    target = bg or c.polar_night.origin
+  end
+
+  local result = utils.blend(hex, target, amount)
+
+  local options = require("nord.config").options
+  if not options.colorblind.enabled then
+    return result
+  end
+
+  return require("nord.utils.colorblind").daltonize(result, options.colorblind.severity)
+end
+
+function utils.lighten(hex, amount, bg)
+  local colors = require("nord.colors")
+  local target = bg or colors.get_semantic().bg
+  return utils.blend(hex, target, amount)
+end
+
 function utils.make_global_bg(transparent)
   local options = require("nord.config").options
+  local colors = require("nord.colors")
 
   if options.transparent and transparent then
     return c.none
   end
 
   if options.colorblind.enable and options.colorblind.preserve_background then
-    return require("nord.colors").default_bg
+    return colors.default_bg
   end
 
-  return c.polar_night.origin
+  -- Use semantic colors based on vim.o.background
+  return colors.get_semantic().bg
 end
 
 return utils
