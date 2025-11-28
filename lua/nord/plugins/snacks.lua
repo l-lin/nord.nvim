@@ -13,6 +13,7 @@ function snacks.highlights()
     SnacksPickerPathIgnored = { link = "Comment" },
     SnacksPickerGitStatusIgnored = { link = "Comment" },
     SnacksPickerGitStatusUntracked = { link = "Comment" },
+    SnacksPickerMatch = { link = "SpecialComment" },
   }
 end
 
