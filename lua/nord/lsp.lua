@@ -22,10 +22,10 @@ function lsp.highlights()
     DiagnosticVirtualTextInfo = { bg = utils.darken(s.info, 0.1), fg = s.info }, -- Used for "Information" diagnostic virtual text
     DiagnosticVirtualTextHint = { bg = utils.darken(s.hint, 0.1), fg = s.hint }, -- Used for "Hint" diagnostic virtual text
 
-    DiagnosticUnderlineError = { undercurl = true, sp = s.error }, -- Used to underline "Error" diagnostics
-    DiagnosticUnderlineWarn = { undercurl = true, sp = s.warning }, -- Used to underline "Warning" diagnostics
-    DiagnosticUnderlineInfo = { undercurl = true, sp = s.info }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { undercurl = true, sp = s.hint }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineError = { undercurl = true, fg = s.error, sp = s.error }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn = { undercurl = true, fg = s.warning, sp = s.warning }, -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInfo = { undercurl = true, fg = s.info, sp = s.info }, -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = { undercurl = true, fg = s.hint, sp = s.hint }, -- Used to underline "Hint" diagnostics
 
     LspCodeLens = { fg = s.bg3 },
     LspInlayHint = { fg = s.bg3 },
