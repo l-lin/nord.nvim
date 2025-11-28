@@ -10,14 +10,6 @@ function utils.load(...)
   end
 end
 
-function utils.make_diff(color)
-  local options = require("nord.config").options
-  local colors = require("nord.colors")
-  local s = colors.get_semantic()
-
-  return { fg = color, bg = s.bg1, reverse = options.diff.mode ~= "fg" }
-end
-
 function utils.make_error(color)
   local options = require("nord.config").options
   if options.errors.mode == "bg" then

@@ -67,10 +67,10 @@ function defaluts.highlights()
     WildMenu = { fg = s.func, bg = s.bg1 }, -- current match in 'wildmenu' completion
     qfLineNr = { fg = s.keyword },
     qfFileName = { fg = s.func },
-    DiffAdd = utils.make_diff(c.aurora.green), -- diff mode: Added line
-    DiffChange = utils.make_diff(c.aurora.yellow), --  diff mode: Changed line
-    DiffDelete = utils.make_diff(c.aurora.red), -- diff mode: Deleted line
-    DiffText = utils.make_diff(s.keyword), -- diff mode: Changed text within a changed line
+    DiffAdd = { fg = s.fg, bg = utils.darken(c.aurora.green, 0.3), nocombine = true }, -- diff mode: Added line
+    DiffChange = { }, --  diff mode: Changed line
+    DiffDelete = { fg = s.fg, bg = utils.darken(c.aurora.red, 0.3), nocombine = true }, -- diff mode: Deleted line
+    DiffText = { fg = s.fg, bg = utils.darken(c.aurora.green, 0.5), nocombine = true }, -- diff mode: Changed text within a changed line
     diffAdded = { link = "DiffAdd" },
     diffChanged = { link = "DiffChange" },
     diffRemoved = { link = "DiffDelete" },

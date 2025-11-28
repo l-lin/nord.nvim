@@ -14,12 +14,15 @@ function git.highlights()
     -- lewis6991/gitsigns.nvim
     GitSignsAdd = { fg = c.aurora.green },
     GitSignsAddNr = { fg = c.aurora.green },
+    GitSignsAddInline = { bg = c.aurora.green },
     GitSignsAddLn = { fg = c.aurora.green },
     GitSignsChange = { fg = c.aurora.yellow },
     GitSignsChangeNr = { fg = c.aurora.yellow },
+    GitSignsChangeInline = { bg = c.aurora.green },
     GitSignsChangeLn = { fg = c.aurora.yellow },
     GitSignsDelete = { fg = c.aurora.red },
     GitSignsDeleteNr = { fg = c.aurora.red },
+    GitSignsDeleteInline = { bg = c.aurora.red },
     GitSignsDeleteLn = { fg = c.aurora.red },
     GitSignsCurrentLineBlame = { fg = s.comment },
 
