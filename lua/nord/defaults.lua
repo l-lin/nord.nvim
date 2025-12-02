@@ -17,7 +17,7 @@ function defaluts.highlights()
     CursorLine = { bg = s.bg1 }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory = { fg = s.func }, -- directory names (and other special names in listings)
     EndOfBuffer = { fg = s.bg1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-    ErrorMsg = { fg = s.fg, bg = c.aurora.red }, -- error messages on the command line
+    ErrorMsg = { fg = s.error }, -- error messages on the command line
     VertSplit = { fg = options.borders and s.border or s.bg, bg = c.none }, -- the column separating vertically split windows
     WinSeparator = {
       fg = options.borders and s.border or s.bg,
@@ -62,7 +62,7 @@ function defaluts.highlights()
     Title = { fg = s.fg, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { fg = c.none, bg = s.bg2 }, -- Visual mode selection
     VisualNOS = { fg = c.none, bg = s.bg2 }, -- Visual mode selection when vim is "Not Owning the Selection".
-    WarningMsg = { fg = s.bg, bg = s.warning }, -- warning messages
+    WarningMsg = { fg = s.warning }, -- warning messages
     Whitespace = { fg = s.bg2 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu = { fg = s.func, bg = s.bg1 }, -- current match in 'wildmenu' completion
     qfLineNr = { fg = s.keyword },
