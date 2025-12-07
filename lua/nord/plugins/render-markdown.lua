@@ -7,7 +7,7 @@ function render_markdown.highlights()
 
   return {
     RenderMarkdownBullet = { fg = s.func },
-    RenderMarkdownQuote = { fg = s.bg2 },
+    RenderMarkdownQuote = { fg = s.comment },
     RenderMarkdownTodo = { fg = s.fg },
     RenderMarkdownH1Bg = { bg = utils.darken(c.frost.artic_water, 0.2) },
     RenderMarkdownH2Bg = { bg = utils.darken(c.aurora.purple, 0.2) },
